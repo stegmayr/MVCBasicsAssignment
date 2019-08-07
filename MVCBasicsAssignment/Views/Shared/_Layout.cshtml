@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/css/MyStyle.css" rel="stylesheet" />
+
+</head>
+<body>
+    <headder>
+        <img src="~/img/LexiconLoggo.jpg" alt="Lexicon Loggo" />
+        <nav>
+            <ul>
+                <li>
+                    <a asp-action="Index" asp-controller="Home">Start</a>
+                </li>
+                <li>
+                    <a asp-action="About" asp-controller="Home">About Me</a>
+                </li>
+                <li>
+                    <a asp-action="Projects" asp-controller="Home">My Projects</a>
+                </li>
+                <li>
+                    <a asp-action="ContactInfo" asp-controller="Home">Contact Me</a>
+                </li>
+            </ul>
+        </nav>
+    </headder>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <p id="DateTime">@DateTime.Now.ToString("yy-MM-dd")</p>
+        <p id="Copyright">&copy; Alex Stegmayr</p>
+    </footer>
+</body>
+</html>
