@@ -28,7 +28,16 @@ namespace MVCBasicsAssignment
 
             app.UseStaticFiles();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>            // Sets up my own MVC and routing schema
+            {
+                routes.MapRoute("feverCheckURL", "FeverCheck/", new { controller = "Home", action = "FeverCheck" });
+                routes.MapRoute("contactMeURL", "Contact/", new { controller = "Home", action = "ContactInfo" });
+
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
+
+
+
 
             //app.Run(async (context) =>
             //{
