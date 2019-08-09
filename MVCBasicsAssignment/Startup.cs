@@ -15,6 +15,17 @@ namespace MVCBasicsAssignment
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromMinutes(5);
+                options.Cookie.HttpOnly = true;
+                // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddMvc();
         }
 
@@ -27,7 +38,7 @@ namespace MVCBasicsAssignment
             }
 
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseMvc(routes =>            // Sets up my own MVC and routing schema
             {
                 routes.MapRoute("feverCheckURL", "FeverCheck/", new { controller = "Home", action = "FeverCheck" });

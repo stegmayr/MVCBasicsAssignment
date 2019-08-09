@@ -31,7 +31,7 @@ namespace MVCBasicsAssignment.Controllers
             
             if (degresCelsius <= 28)
             {
-                ViewBag.outputMessage = "Your body temperature is below 28 degrees celsius and you have hyperthermia. The fact that you even are able to use this website is incredible. But since you can, seek medical attention at once!";
+                ViewBag.outputMessage = "Your body temperature is 28 degrees celsius or below and you have hyperthermia. The fact that you even are able to use this website is incredible. But since you can, seek medical attention at once!";
             }
             else if (degresCelsius <= 35 && degresCelsius > 28)
             {
@@ -43,7 +43,7 @@ namespace MVCBasicsAssignment.Controllers
             }
             else if (degresCelsius >= 42)
             {
-                ViewBag.outputMessage = "Your body temperature is above 42 degrees celsius and you shuld be dead. But since you can still browse the webb for awnsers, seek medical attention at once!";
+                ViewBag.outputMessage = "Your body temperature is 42 degrees celsius or above and you shuld be dead. But since you can still browse the webb for awnsers, seek medical attention at once!";
             }
             else
             {
